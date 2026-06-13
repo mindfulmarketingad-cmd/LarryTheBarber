@@ -187,7 +187,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; line-height
 .product p { color: var(--muted); font-size: 0.9rem; margin: 0; }
 
 /* ---------- Gallery ---------- */
-.gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.gallery { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
 .gallery figure { margin: 0; position: relative; overflow: hidden; border-radius: 6px; border: 1px solid var(--line); aspect-ratio: 4 / 5; }
 .gallery img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s var(--ease); }
 .gallery figure:hover img { transform: scale(1.05); }
@@ -375,4 +375,102 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; line-height
 }
 @media (max-width: 600px) {
   .cat-grid, .related-grid { grid-template-columns: 1fr; }
+}
+
+/* =========================================================================
+   On-site Booking Form  (book.html)
+   ========================================================================= */
+.book-page-hero { padding: 72px 0 48px; border-bottom: 1px solid var(--line); }
+.book-page-hero h1 { font-size: clamp(2.4rem, 6vw, 4rem); color: var(--cream); }
+.book-page-hero .lede { margin-top: 14px; }
+
+/* Step headers */
+.form-step { margin-bottom: 64px; }
+.step-header { display: flex; align-items: center; gap: 16px; margin-bottom: 28px; padding-bottom: 16px; border-bottom: 1px solid var(--line); }
+.step-num { width: 36px; height: 36px; border-radius: 50%; background: var(--blue); color: #fff; display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-weight: 700; font-size: 1rem; flex-shrink: 0; }
+.step-header h2 { font-family: var(--font-body); font-weight: 600; font-size: 1.15rem; color: var(--cream); margin: 0; }
+.step-header .step-sub { color: var(--muted); font-size: 0.85rem; margin: 3px 0 0; }
+
+/* Category filter pills */
+.cat-filter { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 28px; }
+.cat-filter-btn {
+  padding: 8px 18px; border: 1px solid var(--line); border-radius: 20px; background: none;
+  color: var(--muted); font-family: var(--font-body); font-size: 0.8rem; font-weight: 500;
+  letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; transition: all 0.2s;
+}
+.cat-filter-btn:hover, .cat-filter-btn.active { border-color: var(--gold); color: var(--gold); background: rgba(201,160,73,0.08); }
+
+/* Service pick grid */
+.svc-pick-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.svc-group-label { grid-column: 1 / -1; font-family: var(--font-body); font-weight: 600; font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); padding: 16px 0 8px; border-top: 1px solid var(--line); margin-top: 8px; }
+.svc-group-label:first-child { border-top: 0; margin-top: 0; padding-top: 0; }
+.svc-pick {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 8px;
+  padding: 18px 16px; cursor: pointer; transition: border-color 0.2s, background 0.2s, transform 0.2s var(--ease);
+  position: relative;
+}
+.svc-pick:hover { border-color: rgba(201,160,73,0.4); transform: translateY(-2px); }
+.svc-pick.selected { border-color: var(--gold); background: rgba(201,160,73,0.07); }
+.svc-pick.selected::after {
+  content: "✓"; position: absolute; top: 10px; right: 12px;
+  color: var(--gold); font-weight: 700; font-size: 0.9rem;
+}
+.svc-pick-name { color: var(--cream); font-family: var(--font-display); font-size: 0.97rem; margin-bottom: 6px; line-height: 1.3; }
+.svc-pick-price { color: var(--gold); font-weight: 600; font-size: 0.85rem; }
+.svc-pick-dur { color: var(--muted); font-size: 0.75rem; margin-top: 2px; }
+.svc-pick-was { text-decoration: line-through; color: var(--muted); font-size: 0.75rem; margin-right: 4px; }
+.service-error { color: #f97070; font-size: 0.88rem; padding: 10px 16px; background: rgba(249,112,112,0.1); border: 1px solid rgba(249,112,112,0.3); border-radius: 6px; margin-top: -8px; margin-bottom: 16px; display: none; }
+
+/* Form fields */
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.form-grid.full { grid-template-columns: 1fr; }
+.field { display: flex; flex-direction: column; gap: 7px; }
+.field label { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+.field label .req { color: var(--gold); margin-left: 2px; }
+.field input, .field select, .field textarea {
+  background: var(--surface); border: 1px solid var(--line-strong); border-radius: 6px;
+  color: var(--cream); font-family: var(--font-body); font-size: 1rem; padding: 13px 16px;
+  outline: none; transition: border-color 0.2s;
+  -webkit-appearance: none; appearance: none;
+}
+.field input:focus, .field select:focus, .field textarea:focus { border-color: var(--gold); }
+.field input::placeholder, .field textarea::placeholder { color: var(--muted); }
+.field select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2398a2ac' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 40px; }
+.field select option { background: var(--surface-2); }
+.field textarea { resize: vertical; min-height: 110px; }
+.field-hint { font-size: 0.78rem; color: var(--muted); margin-top: 2px; }
+
+/* Selected service summary */
+.booking-summary {
+  background: var(--surface); border: 1px solid var(--line-strong); border-radius: 8px;
+  padding: 20px 22px; margin-bottom: 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px;
+}
+.booking-summary .bs-label { font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+.booking-summary .bs-val { color: var(--cream); font-family: var(--font-display); font-size: 1.05rem; }
+.booking-summary .bs-price { color: var(--gold); font-weight: 600; font-size: 1.2rem; }
+.booking-summary .bs-change { font-size: 0.78rem; color: var(--muted); text-decoration: underline; cursor: pointer; }
+
+/* Submit area */
+.form-submit-area { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 32px; text-align: center; }
+.form-submit-area p { color: var(--muted); font-size: 0.9rem; margin: 12px 0 0; }
+.form-submit-area a { color: var(--gold); }
+
+/* Success / error states */
+.form-success { display: none; text-align: center; padding: 48px 32px; background: var(--surface); border: 1px solid rgba(100,200,130,0.3); border-radius: 8px; }
+.form-success .success-icon { font-size: 3rem; margin-bottom: 16px; }
+.form-success h3 { color: var(--cream); font-size: 1.8rem; margin-bottom: 12px; }
+.form-success p { color: var(--muted); max-width: 40ch; margin: 0 auto; }
+
+/* Setup notice (removed once Formspree ID is set) */
+.setup-notice { background: rgba(42,75,196,0.12); border: 1px solid rgba(42,75,196,0.4); border-radius: 8px; padding: 18px 22px; margin-bottom: 28px; }
+.setup-notice p { color: #a8baff; font-size: 0.88rem; margin: 0; }
+.setup-notice strong { color: #d0daff; }
+.setup-notice code { background: rgba(255,255,255,0.08); padding: 2px 6px; border-radius: 4px; font-size: 0.82rem; }
+
+@media (max-width: 860px) {
+  .svc-pick-grid { grid-template-columns: 1fr 1fr; }
+  .form-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  .svc-pick-grid { grid-template-columns: 1fr; }
 }

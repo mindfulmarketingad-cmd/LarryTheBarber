@@ -13,6 +13,7 @@ Recommended: JPG or WEBP, sized roughly as noted, optimized for web.
 | `gallery-locs.jpg` | The client with **locs / twists and a clean fade** (side profile, clips in). | ~800 × 1000 |
 | `gallery-kids.jpg` | The **young boy with the curly top + fade**. | ~800 × 1000 |
 | `gallery-beard.jpg` | The **bald fade with the full sculpted beard** (side profile). | ~800 × 1000 |
+| `gallery-client-4.jpg` | **New client haircut photo** — the one you shared via the Google Photos link. Drop it in here with this filename. | ~800 × 1000 |
 | `product-beard-oil.jpg` | The **Beard Oil** bottle from the grooming line. | ~800 × 800 (square) |
 | `product-beard-scrub.jpg` | The **Beard Scrub** tin. | ~800 × 800 (square) |
 | `product-face-cleanser.jpg` | The **Face Cleanser** tube. | ~800 × 800 (square) |

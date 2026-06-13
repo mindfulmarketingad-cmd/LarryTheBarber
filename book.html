@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Book an Appointment | Larry The Barber — Grooming Co.</title>
+  <meta name="description" content="Book your next haircut, beard service, package or membership directly with Larry The Barber. Online booking available 24/7." />
+  <meta name="theme-color" content="#0a0a0a" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,500;1,700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a href="index.html" class="brand">
+        <span class="brand-main">Larry The Barber</span>
+        <span class="brand-sub">Grooming Co.</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="services/index.html">Services</a>
+        <a href="index.html#products">Products</a>
+        <a href="index.html#story">Story</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="nav-phone" href="tel:+14044903052">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1l-2.2 2.2z"/></svg>
+          <span class="nav-phone-text"><span class="nav-phone-label">Call / Text</span>(404) 490-3052</span>
+        </a>
+        <a class="btn btn--primary js-book" href="#booking-form">Book Online</a>
+      </div>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="book-page-hero">
+    <div class="container">
+      <p class="eyebrow">Book an Appointment</p>
+      <h1>Reserve Your <span style="color:var(--gold);font-style:italic;">Chair</span></h1>
+      <p class="lede">Choose your service, pick your preferred time, and Larry will confirm within a few hours. Or call / text <a href="tel:+14044903052" style="color:var(--gold);">(404) 490-3052</a> to book directly.</p>
+    </div>
+  </section>
+
+  <section style="padding: 64px 0 96px;">
+    <div class="container" style="max-width: 860px;">
+
+      <!--
+      ★ SETUP — ONE-MINUTE FORMSPREE INTEGRATION
+      ─────────────────────────────────────────────────────────────────────────
+      1. Go to https://formspree.io and create a free account.
+      2. Create a new form — set the notification email to Larry's address.
+      3. Copy the form ID (looks like "xyzabcde").
+      4. Replace YOUR_FORM_ID below with that ID, e.g.:
+            <form id="booking-form" action="https://formspree.io/f/xyzabcde"
+      5. Delete the blue "setup-notice" div below once it's wired up.
+      ─────────────────────────────────────────────────────────────────────────
+      -->
+
+      <div class="setup-notice">
+        <p><strong>Developer note:</strong> To activate form submissions, create a free account at <a href="https://formspree.io" style="color:#a8baff;">formspree.io</a>, create a form, and replace <code>YOUR_FORM_ID</code> in the <code>&lt;form&gt;</code> tag on this page with your real ID. Remove this notice when done.</p>
+      </div>
+
+      <form
+        id="booking-form"
+        action="https://formspree.io/f/YOUR_FORM_ID"
+        method="POST"
+      >
+        <!-- Hidden fields passed to the email -->
+        <input type="hidden" id="selected-service" name="service" value="" />
+
+        <!-- ── STEP 1: Choose a service ── -->
+        <div class="form-step" id="step-service">
+          <div class="step-header">
+            <div class="step-num">1</div>
+            <div>
+              <h2>Choose a Service</h2>
+              <p class="step-sub">Select the service you'd like to book. Click a card to pick it.</p>
+            </div>
+          </div>
+
+          <div id="service-error" class="service-error">Please select a service before continuing.</div>
+
+          <!-- Category filter -->
+          <div class="cat-filter">
+            <button type="button" class="cat-filter-btn active" data-cat="all">All</button>
+            <button type="button" class="cat-filter-btn" data-cat="popular">Popular</button>
+            <button type="button" class="cat-filter-btn" data-cat="haircuts">Haircuts</button>
+            <button type="button" class="cat-filter-btn" data-cat="beard">Beard</button>
+            <button type="button" class="cat-filter-btn" data-cat="packages">Packages</button>
+            <button type="button" class="cat-filter-btn" data-cat="memberships">Memberships</button>
+            <button type="button" class="cat-filter-btn" data-cat="spa">SPA</button>
+          </div>
+
+          <div class="svc-pick-grid">
+
+            <!-- POPULAR -->
+            <div class="svc-group-label service-group" data-cat="popular">⭐ Popular Services</div>
+
+            <div class="svc-pick service-group" data-cat="popular"
+                 data-service="Adult Haircut &amp; Facial Hair" data-price="$49.50">
+              <div class="svc-pick-name">Adult Haircut &amp; Facial Hair</div>
+              <div><span class="svc-pick-was">$55</span><span class="svc-pick-price">$49.50</span></div>
+              <div class="svc-pick-dur">30 min · Enhancements $5+</div>
+            </div>
+            <div class="svc-pick service-group" data-cat="popular"
+                 data-service="Teen Haircut (Age 13-17)" data-price="$36.00">
+              <div class="svc-pick-name">Teen Haircut (Age 13–17)</div>
+              <div><span class="svc-pick-was">$40</span><span class="svc-pick-price">$36.00</span></div>
+              <div class="svc-pick-dur">30 min</div>
+            </div>
+            <div class="svc-pick service-group" data-cat="popular"
+                 data-service="Adult Haircut (Enchantments $5+)" data-price="$45.00">
+              <div class="svc-pick-name">Adult Haircut (Enchantments $5+)</div>
+              <div><span class="svc-pick-was">$50</span><span class="svc-pick-price">$45.00</span></div>
+              <div class="svc-pick-dur">30 min · No beard</div>
+            </div>
+
+            <!-- BEARD -->
+            <div class="svc-group-label service-group" data-cat="beard">✂ Beard Services</div>
+
+            <div class="svc-pick service-group" data-cat="beard"
+                 data-service="Beard Line Up/Sculpture" data-price="$31.50">
+              <div class="svc-pick-name">Beard Line Up / Sculpture</div>
+              <div><span class="svc-pick-was">$35</span><span class="svc-pick-price">$31.50</span></div>
+              <div class="svc-pick-dur">30 min · Razor work + hot towel</div>
+            </div>
+
+            <!-- HAIRCUTS -->
+            <div class="svc-group-label service-group" data-cat="haircuts">💈 Haircuts</div>
+
+            <div class="svc-pick service-group" data-cat="haircuts"
+                 data-service="Haircut w/Facial Steamer" data-price="$75.00">
+              <div class="svc-pick-name">Haircut w/ Facial Steamer</div>
+              <div><span class="svc-pick-price">$75.00</span></div>
+              <div class="svc-pick-dur">1 hr · Beard trim + hot towels + steamer</div>
+            </div>
+            <div class="svc-pick service-group" data-cat="haircuts"
+                 data-service="Hot Shave (with Facial Steamer +$25)" data-price="$55.00">
+              <div class="svc-pick-name">Hot Shave</div>
+              <div><span class="svc-pick-price">$55.00</span></div>
+              <div class="svc-pick-dur">30 min · Facial steamer add-on +$25</div>
+            </div>
+            <div class="svc-pick service-group" data-cat="haircuts"
+                 data-service="Haircut and Facial" data-price="$80.00">
+              <div class="svc-pick-name">Haircut and Facial</div>
+              <div><span class="svc-pick-price">$80.00</span></div>
+              <div class="svc-pick-dur">30 min · Clean, product-free hair required</div>
+            </div>
+            <div class="svc-pick service-group" data-cat="haircuts"
+                 data-service="Children Haircut (12 &amp; Under)" data-price="$31.50">
+              <div class="svc-pick-name">Children Haircut (12 &amp; Under)</div>
+              <div><span class="svc-pick-was">$35</span><span class="svc-pick-price">$31.50</span></div>
+              <div class="svc-pick-dur">30 min · Shampoo + dry hair before visit</div>
+            </div>
+            <div class="svc-pick service-group" data-cat="haircuts"
+                 data-service="College Students (with school ID)" data-price="$40.50">
+              <div class="svc-pick-name">College Students (with school ID)</div>
+              <div><span class="svc-pick-was">$45</span><span class="svc-pick-price">$40.50</span></div>
+              <div class="svc-pick-dur">30 min · Valid school ID required</div>
+            </div>
+            <div class="svc-pick service-group" data-cat="haircuts"
+                 data-service="Senior Citizen Cut (65+ years old)" data-price="$36.00">
+              <div class="svc-pick-name">Senior Citizen Cut (65+)</div>
+              <div><span class="svc-pick-was">$40</span><span class="svc-pick-price">$36.00</span></div>
+              <div class="svc-pick-dur">30 min</div>
+            </div>
+
+            <!-- PACKAGES -->
+            <div class="svc-group-label service-group" data-cat="packages">🎁 Packages</div>
+
+            <div class="svc-pick service-group" data-cat="packages"
+                 data-service="Early Bird Haircut (Before 10 AM)" data-price="$100.00">
+              <div class="svc-pick-name">Early Bird Haircut 🐦</div>
+              <div><span class="svc-pick-price">$100.00</span></div>
+              <div class="svc-pick-dur">1 hr · Cut, beard, shampoo &amp; condition · Before 10 AM</div>
+            </div>
+            <div class="svc-pick service-group" data-cat="packages"
+                 data-service="After Hour Service (7PM-10PM)" data-price="$100.00">
+              <div class="svc-pick-name">After Hour Service</div>
+              <div><span class="svc-pick-price">$100.00</span></div>
+              <div class="svc-pick-dur">30 min · Any service 7 PM–10 PM</div>
+            </div>
+            <div class="svc-pick service-group" data-cat="packages"
+                 data-service="Father &amp; Son Package" data-price="$81.00">
+              <div class="svc-pick-name">Father &amp; Son Package</div>
+              <div><span class="svc-pick-was">$90</span><span class="svc-pick-price">$81.00</span></div>
+              <div class="svc-pick-dur">1 hr · Two haircuts in one visit</div>
+            </div>
+            <div class="svc-pick service-group" data-cat="packages"
+                 data-service="2 Boys Package" data-price="$72.00">
+              <div class="svc-pick-name">2 Boys Package</div>
+              <div><span class="svc-pick-was">$80</span><span class="svc-pick-price">$72.00</span></div>
+              <div class="svc-pick-dur">1 hr · Two kids cuts in one visit</div>
+            </div>
+
+            <!-- MEMBERSHIPS -->
+            <div class="svc-group-label service-group" data-cat="memberships">👑 Memberships</div>
+
+            <div class="svc-pick service-group" data-cat="memberships"
+                 data-service="Monthly Membership – Elite" data-price="$260/mo">
+              <div class="svc-pick-name">Monthly — Elite</div>
+              <div><span class="svc-pick-price">$260/mo</span></div>
+              <div class="svc-pick-dur">Up to 4 cuts + beard every visit · VIP</div>
+            </div>
+            <div class="svc-pick service-group" data-cat="memberships"
+                 data-service="Monthly Membership – Premium" data-price="$235/mo">
+              <div class="svc-pick-name">Monthly — Premium</div>
+              <div><span class="svc-pick-price">$235/mo</span></div>
+              <div class="svc-pick-dur">4 cuts/month + beard trim</div>
+            </div>
+            <div class="svc-pick service-group" data-cat="memberships"
+                 data-service="Monthly Membership Basic" data-price="$100/mo">
+              <div class="svc-pick-name">Monthly — Basic</div>
+              <div><span class="svc-pick-price">$100/mo</span></div>
+              <div class="svc-pick-dur">2 cuts/month</div>
+            </div>
+            <div class="svc-pick service-group" data-cat="memberships"
+                 data-service="Beard-Only Monthly Membership" data-price="$140/mo">
+              <div class="svc-pick-name">Beard-Only Membership</div>
+              <div><span class="svc-pick-price">$140/mo</span></div>
+              <div class="svc-pick-dur">Up to 4 beard trims/month</div>
+            </div>
+            <div class="svc-pick service-group" data-cat="memberships"
+                 data-service="Elite Yearly Membership" data-price="$2,340/yr">
+              <div class="svc-pick-name">Elite Yearly</div>
+              <div><span class="svc-pick-price">$2,340/yr</span></div>
+              <div class="svc-pick-dur">Best value · VIP full year</div>
+            </div>
+            <div class="svc-pick service-group" data-cat="memberships"
+                 data-service="Premium Yearly Membership" data-price="$1,920/yr">
+              <div class="svc-pick-name">Premium Yearly</div>
+              <div><span class="svc-pick-price">$1,920/yr</span></div>
+              <div class="svc-pick-dur">Weekly cuts + beard · Full year</div>
+            </div>
+            <div class="svc-pick service-group" data-cat="memberships"
+                 data-service="Basic Yearly Membership" data-price="$1,140/yr">
+              <div class="svc-pick-name">Basic Yearly</div>
+              <div><span class="svc-pick-price">$1,140/yr</span></div>
+              <div class="svc-pick-dur">2 cuts/month · Full year · Priority booking</div>
+            </div>
+            <div class="svc-pick service-group" data-cat="memberships"
+                 data-service="Father/Son Monthly Membership" data-price="$180/mo">
+              <div class="svc-pick-name">Father/Son Monthly</div>
+              <div><span class="svc-pick-price">$180/mo</span></div>
+              <div class="svc-pick-dur">2 visits/month · Dad + son</div>
+            </div>
+            <div class="svc-pick service-group" data-cat="memberships"
+                 data-service="Father/Son Yearly Membership" data-price="$2,160/yr">
+              <div class="svc-pick-name">Father/Son Yearly</div>
+              <div><span class="svc-pick-price">$2,160/yr</span></div>
+              <div class="svc-pick-dur">24 visits over the year</div>
+            </div>
+
+            <!-- SPA -->
+            <div class="svc-group-label service-group" data-cat="spa">✨ SPA Services</div>
+
+            <div class="svc-pick service-group" data-cat="spa"
+                 data-service="Facial" data-price="$40.00">
+              <div class="svc-pick-name">Facial</div>
+              <div><span class="svc-pick-price">$40.00</span></div>
+              <div class="svc-pick-dur">30 min · Professional facial treatment</div>
+            </div>
+
+          </div><!-- /.svc-pick-grid -->
+        </div><!-- /#step-service -->
+
+
+        <!-- ── STEP 2: Your details ── -->
+        <div class="form-step" id="step-details">
+          <div class="step-header">
+            <div class="step-num">2</div>
+            <div>
+              <h2>Your Details</h2>
+              <p class="step-sub">Fill in your contact info and preferred appointment time.</p>
+            </div>
+          </div>
+
+          <!-- selected service summary (updated by JS) -->
+          <div class="booking-summary" id="booking-summary" style="display:none;">
+            <div>
+              <div class="bs-label">Selected service</div>
+              <div class="bs-val" id="summary-service-name">—</div>
+            </div>
+            <div style="text-align:right;">
+              <div class="bs-price" id="service-price-display"></div>
+              <div class="bs-change" onclick="document.getElementById('step-service').scrollIntoView({behavior:'smooth'})">Change</div>
+            </div>
+          </div>
+
+          <div class="form-grid" style="margin-bottom:18px;">
+            <div class="field">
+              <label for="first-name">First Name <span class="req">*</span></label>
+              <input type="text" id="first-name" name="first_name" required placeholder="First name" autocomplete="given-name" />
+            </div>
+            <div class="field">
+              <label for="last-name">Last Name <span class="req">*</span></label>
+              <input type="text" id="last-name" name="last_name" required placeholder="Last name" autocomplete="family-name" />
+            </div>
+            <div class="field">
+              <label for="phone">Phone / Text <span class="req">*</span></label>
+              <input type="tel" id="phone" name="phone" required placeholder="(404) 000-0000" autocomplete="tel" />
+            </div>
+            <div class="field">
+              <label for="email">Email Address <span class="req">*</span></label>
+              <input type="email" id="email" name="email" required placeholder="you@example.com" autocomplete="email" />
+            </div>
+            <div class="field">
+              <label for="pref-date">Preferred Date <span class="req">*</span></label>
+              <input type="date" id="pref-date" name="preferred_date" required />
+            </div>
+            <div class="field">
+              <label for="pref-time">Preferred Time</label>
+              <select id="pref-time" name="preferred_time">
+                <option value="">— Select a time window —</option>
+                <option>Early Bird (Before 10 AM)</option>
+                <option>Morning (10 AM – 12 PM)</option>
+                <option>Afternoon (12 PM – 3 PM)</option>
+                <option>Late Afternoon (3 PM – 6 PM)</option>
+                <option>Evening (6 PM – 7 PM)</option>
+                <option>After Hours (7 PM – 10 PM)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-grid full" style="margin-bottom:28px;">
+            <div class="field">
+              <label for="notes">Additional Notes</label>
+              <textarea id="notes" name="notes" placeholder="Any style preferences, add-ons, or questions for Larry..."></textarea>
+              <span class="field-hint">Optional — include anything that helps Larry prepare for your visit.</span>
+            </div>
+          </div>
+
+          <!-- Honeypot spam trap -->
+          <input type="text" name="_gotcha" style="display:none;" tabindex="-1" autocomplete="off" />
+          <!-- Formspree redirect after success -->
+          <input type="hidden" name="_next" value="" />
+
+          <div class="form-submit-area">
+            <button type="submit" class="btn btn--primary btn--lg" style="min-width:240px;">
+              Request Appointment
+            </button>
+            <p>Larry will confirm your appointment by phone or text within a few hours.<br>
+              Prefer to talk? Call or text <a href="tel:+14044903052">(404) 490-3052</a> directly.</p>
+          </div>
+
+        </div><!-- /#step-details -->
+
+      </form><!-- /#booking-form -->
+
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand"><span class="brand-main">Larry The Barber</span><span class="brand-sub">Grooming Co.</span></div>
+          <p>Premium cuts, fades and grooming for the modern gentleman. Book online or call <a href="tel:+14044903052" style="color:var(--gold);">(404) 490-3052</a>.</p>
+        </div>
+        <div>
+          <h4>Services</h4>
+          <a href="services/index.html">All Services</a>
+          <a href="services/early-bird-package.html">Early Bird Package</a>
+          <a href="services/membership-elite-monthly.html">Elite Membership</a>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <a href="legal/privacy-policy.html">Privacy Policy</a>
+          <a href="legal/terms-of-service.html">Terms of Service</a>
+          <a href="legal/cookie-policy.html">Cookie Policy</a>
+          <a href="legal/accessibility-statement.html">Accessibility</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span class="js-year">2026</span> Larry The Barber — Grooming Co. All rights reserved.</span>
+        <span>Atlanta, GA · (404) 490-3052</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    /* Show booking summary as soon as a service is selected */
+    document.addEventListener("DOMContentLoaded", function () {
+      var cards = document.querySelectorAll(".svc-pick");
+      var summary = document.getElementById("booking-summary");
+      var summaryName = document.getElementById("summary-service-name");
+      cards.forEach(function (card) {
+        card.addEventListener("click", function () {
+          if (summary) summary.style.display = "flex";
+          if (summaryName) summaryName.textContent = card.getAttribute("data-service");
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
