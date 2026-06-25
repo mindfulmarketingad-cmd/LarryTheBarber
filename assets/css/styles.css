@@ -475,3 +475,56 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; line-height
 @media (max-width: 560px) {
   .svc-pick-grid { grid-template-columns: 1fr; }
 }
+
+/* ===================== HOMEPAGE SERVICES ACCORDION ===================== */
+.svc-accordion { max-width: 860px; margin: 0 auto; }
+.svc-acc { border-top: 1px solid var(--line); }
+.svc-acc:last-child { border-bottom: 1px solid var(--line); }
+.svc-acc > summary {
+  list-style: none; cursor: pointer; display: flex; align-items: center; gap: 14px;
+  padding: 22px 4px; font-family: var(--font-display); font-size: 1.22rem; font-weight: 700;
+  color: var(--cream); transition: color 0.2s;
+}
+.svc-acc > summary::-webkit-details-marker { display: none; }
+.svc-acc > summary:hover { color: var(--gold); }
+.svc-acc > summary .acc-chevron {
+  width: 12px; height: 12px; flex-shrink: 0; border-right: 2px solid var(--gold);
+  border-bottom: 2px solid var(--gold); transform: rotate(-45deg); transition: transform 0.25s; margin-top: -4px;
+}
+.svc-acc[open] > summary .acc-chevron { transform: rotate(45deg); margin-top: 2px; }
+.svc-acc .acc-title { flex: 1 1 auto; }
+.svc-acc .acc-title .acc-note { font-family: var(--font-body); font-size: 0.62em; font-weight: 400; font-style: italic; color: var(--muted); text-transform: none; letter-spacing: 0; }
+.svc-acc .acc-count {
+  flex-shrink: 0; font-family: var(--font-body); font-size: 0.7rem; font-weight: 500;
+  letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted);
+  background: var(--black-2); border: 1px solid var(--line); border-radius: 20px; padding: 5px 12px;
+}
+.svc-acc-body { padding-bottom: 10px; }
+.svc-acc-row {
+  display: flex; align-items: center; gap: 18px; padding: 18px 4px;
+  border-top: 1px solid var(--line);
+}
+.svc-acc-row:first-child { border-top: 1px dashed var(--line); }
+.svc-acc-link { flex: 1 1 auto; text-decoration: none; min-width: 0; }
+.svc-acc-name { color: var(--cream); font-weight: 500; font-size: 1rem; margin-bottom: 4px; transition: color 0.2s; }
+.svc-acc-link:hover .svc-acc-name { color: var(--gold); }
+.svc-acc-name .badge-sale { display: inline-block; font-size: 0.62rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--black); background: var(--gold); border-radius: 4px; padding: 2px 6px; margin-left: 8px; vertical-align: middle; }
+.svc-acc-desc { color: var(--muted); font-size: 0.85rem; line-height: 1.5; max-width: 46ch; }
+.svc-acc-meta { flex-shrink: 0; text-align: right; }
+.svc-acc-price { color: var(--gold); font-weight: 600; font-size: 1.02rem; white-space: nowrap; }
+.svc-acc-price .was { color: var(--muted); text-decoration: line-through; font-weight: 400; font-size: 0.85rem; margin-right: 6px; }
+.svc-acc-dur { color: var(--muted); font-size: 0.74rem; margin-top: 2px; }
+.svc-acc-book {
+  flex-shrink: 0; text-decoration: none; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.06em;
+  text-transform: uppercase; color: #fff; background: var(--blue); border-radius: 6px;
+  padding: 10px 18px; transition: filter 0.2s, transform 0.1s;
+}
+.svc-acc-book:hover { filter: brightness(1.12); }
+.svc-acc-book:active { transform: translateY(1px); }
+@media (max-width: 600px) {
+  .svc-acc-row { flex-wrap: wrap; gap: 10px 14px; }
+  .svc-acc-link { flex: 1 1 100%; order: 1; }
+  .svc-acc-meta { order: 2; text-align: left; }
+  .svc-acc-book { order: 3; margin-left: auto; }
+  .svc-acc-desc { max-width: none; }
+}
