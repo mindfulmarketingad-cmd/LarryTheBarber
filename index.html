@@ -3,19 +3,18 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Larry The Barber — Grooming Co. | Book Online in Atlanta</title>
-  <meta name="description" content="Larry The Barber — premium cuts, fades, beard work and grooming for the modern gentleman. Book your appointment online or call (404) 490-3052." />
-  <meta name="theme-color" content="#0a0a0a" />
+  <title>Larry The Barber — Grooming Co. | Precision Cuts in Alpharetta, GA</title>
+  <meta name="description" content="Located in Alpharetta, GA, LarryTheBarber brings clean fades, sharp beard work, hot towel services, and premium grooming to every client who sits in the chair. Book on Booksy or call 404-490-3052." />
+  <meta name="theme-color" content="#050506" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="Larry The Barber — Grooming Co." />
-  <meta property="og:description" content="Premium cuts, fades and beard work. Book online or call (404) 490-3052." />
+  <meta property="og:description" content="Precision Cuts. Luxury Grooming. Real Barber Experience. Alpharetta, GA." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="assets/images/larry-portrait.jpg" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,500;1,700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Dancing+Script:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/styles.css" />
 
   <!-- Local business structured data -->
@@ -24,10 +23,15 @@
     "@context": "https://schema.org",
     "@type": "HairSalon",
     "name": "Larry The Barber — Grooming Co.",
-    "image": "assets/images/larry-portrait.jpg",
     "telephone": "+1-404-490-3052",
     "priceRange": "$$",
-    "areaServed": "Atlanta, GA",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Inside Salons By JC, 33 S Main St. Suite 201",
+      "addressLocality": "Alpharetta",
+      "addressRegion": "GA",
+      "postalCode": "30009"
+    },
     "url": ""
   }
   </script>
@@ -35,32 +39,25 @@
 <body>
 
   <!-- ===================== HEADER ===================== -->
-  <header class="site-header">
-    <div class="container nav">
-      <a href="#top" class="brand" aria-label="Larry The Barber, Grooming Co. home">
-        <img class="header-photo" src="https://d2zdpiztbgorvt.cloudfront.net/region1/us/304968/biz_photo/01ae7f67a46645699bd60609f51271-larry-the-barber-biz-photo-aad2982c12694990a0d863130d0b1f-booksy.jpeg?size=640x427" alt="Larry The Barber shop" />
-        <span class="brand-main">Larry The Barber</span>
-        <span class="brand-sub">Grooming Co.</span>
-      </a>
-
-      <nav class="nav-links" aria-label="Primary">
-        <a href="#top">Home</a>
+  <header class="lbx-header" id="top">
+    <div class="container lbx-nav">
+      <nav class="lbx-nav-side lbx-nav-left" aria-label="Primary left">
+        <a href="#top" class="active">Home</a>
         <a href="#services">Services</a>
-        <a href="#story">Story</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
       </nav>
 
-      <div class="nav-actions">
-        <a class="nav-phone" href="tel:+14044903052">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1l-2.2 2.2z"/></svg>
-          <span class="nav-phone-text">
-            <span class="nav-phone-label">Call / Text</span>
-            (404) 490-3052
-          </span>
-        </a>
-        <a class="btn btn--primary js-book" href="#book">Book Online</a>
-      </div>
+      <a href="#top" class="lbx-logo" aria-label="Larry The Barber, Grooming Co. home">
+        <span class="lbx-logo-lb">LB</span>
+        <span class="lbx-logo-name">Larry The Barber</span>
+        <span class="lbx-logo-sub">Grooming&nbsp;Co.</span>
+      </a>
+
+      <nav class="lbx-nav-side lbx-nav-right" aria-label="Primary right">
+        <a href="#gallery">Gallery</a>
+        <a href="services/index.html">Products</a>
+        <a href="#contact">Contact</a>
+      </nav>
 
       <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -68,420 +65,234 @@
     </div>
   </header>
 
-  <main id="top">
+  <main>
 
     <!-- ===================== HERO ===================== -->
-    <section class="hero">
-      <div class="container">
-        <div class="hero-grid">
-          <div class="hero-copy">
-            <p class="eyebrow">The Standard in the Chair</p>
-            <h1>Larry The Barber<span class="gold">Grooming Co.</span></h1>
-            <p class="lede">Precision cuts, clean fades and sharp beard work for the modern gentleman who demands excellence in every detail. Walk in a regular — leave a standard.</p>
-            <div class="hero-cta">
-              <a class="btn btn--primary btn--lg js-book" href="#book">Book Appointment</a>
+    <section class="lbx-hero">
+      <div class="container lbx-hero-grid">
+        <div class="lbx-hero-copy">
+          <h1>
+            <span class="w">Precision Cuts.</span>
+            <span class="w">Luxury Grooming.</span>
+            <span class="b">Real Barber Experience.</span>
+          </h1>
+          <p class="lbx-hero-lede">Located in Alpharetta, GA, LarryTheBarber brings clean fades, sharp beard work, hot towel services, and premium grooming to every client who sits in the chair.</p>
+
+          <div class="lbx-bookcard">
+            <div class="lbx-bookcard-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/><path d="M8 14h2M14 14h2M8 17.5h2M14 17.5h2"/></svg>
+            </div>
+            <div class="lbx-bookcard-body">
+              <h3>Book Your Appointment Today</h3>
+              <p>Schedule your next cut through Booksy:</p>
+              <a class="lbx-pill" href="https://larry-thebarber.booksy.com" target="_blank" rel="noopener">Larry-thebarber.booksy.com</a>
             </div>
           </div>
-          <div class="hero-media">
-            <div class="media-fill">
-              <img data-photo="larry-portrait.jpg" data-label="Photo of Larry — the Men's Mental Health feature"
-                   src="assets/images/larry-portrait.jpg" alt="Larry The Barber" />
-            </div>
-          </div>
+        </div>
+
+        <div class="lbx-hero-media">
+          <img src="assets/images/e63bb35110004a848249f26b32d5c8-larry-the-barber-inspiration-b07345b1ed0c4e57b30bc47724dc57-booksy.jpeg" alt="Fresh cut in the chair at LarryTheBarber" />
         </div>
       </div>
     </section>
 
     <!-- ===================== SERVICES ===================== -->
-    <section class="section section--tight" id="services" style="background:var(--black-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+    <section class="lbx-services" id="services">
       <div class="container">
-        <div class="center reveal" style="margin-bottom:48px;">
-          <p class="eyebrow">In The Chair</p>
-          <h2 class="section-title">Services &amp; <span class="accent">Specialties</span></h2>
-          <p class="lede">From classic haircuts and beard work to memberships and spa services — book any service online in minutes.</p>
-        </div>
-        <div class="svc-accordion reveal">
+        <p class="lbx-eyebrow reveal"><span></span>Services<span></span></p>
+        <h2 class="lbx-h2 center reveal">Top Tier Services. Top Tier Experience.</h2>
 
-          <!-- POPULAR (open) -->
-          <details class="svc-acc" open>
-            <summary><span class="acc-chevron"></span><span class="acc-title">Popular Services</span><span class="acc-count">3 services</span></summary>
-            <div class="svc-acc-body">
-              <div class="svc-acc-row">
-                <a class="svc-acc-link" href="services/adult-haircut-facial-hair.html"><div class="svc-acc-name">Adult Haircut &amp; Facial Hair (Enhancements $5+) <span class="badge-sale">Save 10%</span></div><div class="svc-acc-desc">Refer to Early Bird for services before 10 AM. Includes haircut and facial hair enhancements.</div></a>
-                <div class="svc-acc-meta"><div class="svc-acc-price"><span class="was">$55.00</span>$49.50</div><div class="svc-acc-dur">30 min</div></div>
-                <a class="svc-acc-book js-book" href="book.html">Book</a>
-              </div>
-              <div class="svc-acc-row">
-                <a class="svc-acc-link" href="services/teen-haircut.html"><div class="svc-acc-name">Teen Haircut (Age 13–17) <span class="badge-sale">Save 10%</span></div><div class="svc-acc-desc">Do not book this service before 10 AM. Please be sure to shampoo your hair before arriving.</div></a>
-                <div class="svc-acc-meta"><div class="svc-acc-price"><span class="was">$40.00</span>$36.00</div><div class="svc-acc-dur">30 min</div></div>
-                <a class="svc-acc-book js-book" href="book.html">Book</a>
-              </div>
-              <div class="svc-acc-row">
-                <a class="svc-acc-link" href="services/adult-haircut.html"><div class="svc-acc-name">Adult Haircut (Enchantments $5+) <span class="badge-sale">Save 10%</span></div><div class="svc-acc-desc">Do not book this service if you have a beard! Refer to the Early Bird package instead.</div></a>
-                <div class="svc-acc-meta"><div class="svc-acc-price"><span class="was">$50.00</span>$45.00</div><div class="svc-acc-dur">30 min</div></div>
-                <a class="svc-acc-book js-book" href="book.html">Book</a>
-              </div>
-            </div>
-          </details>
-
-          <!-- MEMBERSHIP SUBSCRIPTIONS -->
-          <details class="svc-acc">
-            <summary><span class="acc-chevron"></span><span class="acc-title">Membership Subscriptions</span><span class="acc-count">9 services</span></summary>
-            <div class="svc-acc-body">
-              <div class="svc-acc-row">
-                <a class="svc-acc-link" href="services/membership-elite-monthly.html"><div class="svc-acc-name">Monthly Membership – Elite</div><div class="svc-acc-desc">VIP experience. Up to 4 haircuts per month, beard trim every visit, and hot towels.</div></a>
-                <div class="svc-acc-meta"><div class="svc-acc-price">$260.00</div><div class="svc-acc-dur">/ month</div></div>
-                <a class="svc-acc-book js-book" href="book.html">Book</a>
-              </div>
-              <div class="svc-acc-row">
-                <a class="svc-acc-link" href="services/membership-premium-monthly.html"><div class="svc-acc-name">Monthly Membership – Premium</div><div class="svc-acc-desc">Up to 4 haircuts per month (1 per week) plus beard trim included. Perfect for regulars.</div></a>
-                <div class="svc-acc-meta"><div class="svc-acc-price">$235.00</div><div class="svc-acc-dur">/ month</div></div>
-                <a class="svc-acc-book js-book" href="book.html">Book</a>
-              </div>
-              <div class="svc-acc-row">
-                <a class="svc-acc-link" href="services/membership-basic-monthly.html"><div class="svc-acc-name">Monthly Membership Basic</div><div class="svc-acc-desc">Includes 2 standard haircuts per month. Ideal for clients who come every other week.</div></a>
-                <div class="svc-acc-meta"><div class="svc-acc-price">$100.00</div><div class="svc-acc-dur">/ month</div></div>
-                <a class="svc-acc-book js-book" href="book.html">Book</a>
-              </div>
-              <div class="svc-acc-row">
-                <a class="svc-acc-link" href="services/membership-beard-only.html"><div class="svc-acc-name">Beard-Only Monthly Membership</div><div class="svc-acc-desc">Up to 4 beard trims per month. Perfect for clients who maintain their own hair.</div></a>
-                <div class="svc-acc-meta"><div class="svc-acc-price">$140.00</div><div class="svc-acc-dur">/ month</div></div>
-                <a class="svc-acc-book js-book" href="book.html">Book</a>
-              </div>
-              <div class="svc-acc-row">
-                <a class="svc-acc-link" href="services/membership-elite-yearly.html"><div class="svc-acc-name">Elite Yearly</div><div class="svc-acc-desc">Best value. Full VIP service for the year including weekly cuts, beard, and hot towels.</div></a>
-                <div class="svc-acc-meta"><div class="svc-acc-price">$2,340.00</div><div class="svc-acc-dur">/ year</div></div>
-                <a class="svc-acc-book js-book" href="book.html">Book</a>
-              </div>
-              <div class="svc-acc-row">
-                <a class="svc-acc-link" href="services/membership-premium-yearly.html"><div class="svc-acc-name">Premium Yearly</div><div class="svc-acc-desc">Prepaid yearly plan including weekly haircuts plus beard trim with maximum flexibility.</div></a>
-                <div class="svc-acc-meta"><div class="svc-acc-price">$1,920.00</div><div class="svc-acc-dur">/ year</div></div>
-                <a class="svc-acc-book js-book" href="book.html">Book</a>
-              </div>
-              <div class="svc-acc-row">
-                <a class="svc-acc-link" href="services/membership-basic-yearly.html"><div class="svc-acc-name">Basic Yearly</div><div class="svc-acc-desc">Prepaid yearly plan for 2 haircuts per month at a discounted rate. Priority scheduling.</div></a>
-                <div class="svc-acc-meta"><div class="svc-acc-price">$1,140.00</div><div class="svc-acc-dur">/ year</div></div>
-                <a class="svc-acc-book js-book" href="book.html">Book</a>
-              </div>
-              <div class="svc-acc-row">
-                <a class="svc-acc-link" href="services/membership-father-son-monthly.html"><div class="svc-acc-name">Father/Son Monthly Membership</div><div class="svc-acc-desc">Includes 2 father haircuts and son haircuts per month.</div></a>
-                <div class="svc-acc-meta"><div class="svc-acc-price">$180.00</div><div class="svc-acc-dur">/ month</div></div>
-                <a class="svc-acc-book js-book" href="book.html">Book</a>
-              </div>
-              <div class="svc-acc-row">
-                <a class="svc-acc-link" href="services/membership-father-son-yearly.html"><div class="svc-acc-name">Father/Son Yearly Membership</div><div class="svc-acc-desc">Includes 24 father haircuts and son haircuts over the year.</div></a>
-                <div class="svc-acc-meta"><div class="svc-acc-price">$2,160.00</div><div class="svc-acc-dur">/ year</div></div>
-                <a class="svc-acc-book js-book" href="book.html">Book</a>
-              </div>
-            </div>
-          </details>
-
-          <!-- PACKAGES -->
-          <details class="svc-acc">
-            <summary><span class="acc-chevron"></span><span class="acc-title">Packages</span><span class="acc-count">4 services</span></summary>
-            <div class="svc-acc-body">
-              <div class="svc-acc-row">
-                <a class="svc-acc-link" href="services/early-bird-package.html"><div class="svc-acc-name">Early Bird 🐦 Haircut (Any Service Before 10 AM)</div><div class="svc-acc-desc">Includes: standard haircut, beard sculpture, shampoo, condition, and more.</div></a>
-                <div class="svc-acc-meta"><div class="svc-acc-price">$100.00</div><div class="svc-acc-dur">1 hr</div></div>
-                <a class="svc-acc-book js-book" href="book.html">Book</a>
-              </div>
-              <div class="svc-acc-row">
-                <a class="svc-acc-link" href="services/after-hours-service.html"><div class="svc-acc-name">After Hour Service (Any Service After 7 PM, 7–10 PM)</div><div class="svc-acc-desc">Any service booked after 7 PM. Available evenings for those who can't make regular hours.</div></a>
-                <div class="svc-acc-meta"><div class="svc-acc-price">$100.00</div><div class="svc-acc-dur">30 min</div></div>
-                <a class="svc-acc-book js-book" href="book.html">Book</a>
-              </div>
-              <div class="svc-acc-row">
-                <a class="svc-acc-link" href="services/father-son-package.html"><div class="svc-acc-name">Father &amp; Son Package <span class="badge-sale">Save 10%</span></div><div class="svc-acc-desc">Refer to Early Bird package for services before 10 AM. Please make sure hair is shampooed.</div></a>
-                <div class="svc-acc-meta"><div class="svc-acc-price"><span class="was">$90.00</span>$81.00</div><div class="svc-acc-dur">1 hr</div></div>
-                <a class="svc-acc-book js-book" href="book.html">Book</a>
-              </div>
-              <div class="svc-acc-row">
-                <a class="svc-acc-link" href="services/two-boys-package.html"><div class="svc-acc-name">2 Boys Package <span class="badge-sale">Save 10%</span></div><div class="svc-acc-desc">Refer to Early Bird package for services before 10 AM. Please be sure hair is shampooed.</div></a>
-                <div class="svc-acc-meta"><div class="svc-acc-price"><span class="was">$80.00</span>$72.00</div><div class="svc-acc-dur">1 hr</div></div>
-                <a class="svc-acc-book js-book" href="book.html">Book</a>
-              </div>
-            </div>
-          </details>
-
-          <!-- BEARD SERVICES -->
-          <details class="svc-acc">
-            <summary><span class="acc-chevron"></span><span class="acc-title">Beard Services</span><span class="acc-count">1 service</span></summary>
-            <div class="svc-acc-body">
-              <div class="svc-acc-row">
-                <a class="svc-acc-link" href="services/beard-lineup.html"><div class="svc-acc-name">Beard Line Up / Sculpture <span class="badge-sale">Save 10%</span></div><div class="svc-acc-desc">Includes beard sculpture, razor work, beard wash, hot towel, and detailed lineup.</div></a>
-                <div class="svc-acc-meta"><div class="svc-acc-price"><span class="was">$35.00</span>$31.50</div><div class="svc-acc-dur">30 min</div></div>
-                <a class="svc-acc-book js-book" href="book.html">Book</a>
-              </div>
-            </div>
-          </details>
-
-          <!-- HAIRCUTS -->
-          <details class="svc-acc">
-            <summary><span class="acc-chevron"></span><span class="acc-title">Haircuts</span><span class="acc-count">9 services</span></summary>
-            <div class="svc-acc-body">
-              <div class="svc-acc-row">
-                <a class="svc-acc-link" href="services/haircut-facial-steamer.html"><div class="svc-acc-name">Haircut w/ Facial Steamer</div><div class="svc-acc-desc">Includes haircut, beard trim, hot towels, facial massage, and facial steamer treatment.</div></a>
-                <div class="svc-acc-meta"><div class="svc-acc-price">$75.00</div><div class="svc-acc-dur">1 hr</div></div>
-                <a class="svc-acc-book js-book" href="book.html">Book</a>
-              </div>
-              <div class="svc-acc-row">
-                <a class="svc-acc-link" href="services/hot-shave.html"><div class="svc-acc-name">Hot Shave (with Facial Steamer +$25)</div><div class="svc-acc-desc">Classic hot shave service. Add a facial steamer for an additional $25.</div></a>
-                <div class="svc-acc-meta"><div class="svc-acc-price">$55.00</div><div class="svc-acc-dur">30 min</div></div>
-                <a class="svc-acc-book js-book" href="book.html">Book</a>
-              </div>
-              <div class="svc-acc-row">
-                <a class="svc-acc-link" href="services/adult-haircut-facial-hair.html"><div class="svc-acc-name">Adult Haircut &amp; Facial Hair (Enhancements $5+) <span class="badge-sale">Save 10%</span></div><div class="svc-acc-desc">Refer to Early Bird package for services before 10 AM.</div></a>
-                <div class="svc-acc-meta"><div class="svc-acc-price"><span class="was">$55.00</span>$49.50</div><div class="svc-acc-dur">30 min</div></div>
-                <a class="svc-acc-book js-book" href="book.html">Book</a>
-              </div>
-              <div class="svc-acc-row">
-                <a class="svc-acc-link" href="services/adult-haircut.html"><div class="svc-acc-name">Adult Haircut (Enchantments $5+) <span class="badge-sale">Save 10%</span></div><div class="svc-acc-desc">Do not book this service if you have a beard! Refer to Early Bird instead.</div></a>
-                <div class="svc-acc-meta"><div class="svc-acc-price"><span class="was">$50.00</span>$45.00</div><div class="svc-acc-dur">30 min</div></div>
-                <a class="svc-acc-book js-book" href="book.html">Book</a>
-              </div>
-              <div class="svc-acc-row">
-                <a class="svc-acc-link" href="services/children-haircut.html"><div class="svc-acc-name">Children Haircut (12 &amp; Under) <span class="badge-sale">Save 10%</span></div><div class="svc-acc-desc">Please ensure your child's head is shampooed and dried before the appointment.</div></a>
-                <div class="svc-acc-meta"><div class="svc-acc-price"><span class="was">$35.00</span>$31.50</div><div class="svc-acc-dur">30 min</div></div>
-                <a class="svc-acc-book js-book" href="book.html">Book</a>
-              </div>
-              <div class="svc-acc-row">
-                <a class="svc-acc-link" href="services/college-student-haircut.html"><div class="svc-acc-name">College Students (with school ID) <span class="badge-sale">Save 10%</span></div><div class="svc-acc-desc">Do not book this service before 10 AM. Please shampoo your hair. Valid school ID required.</div></a>
-                <div class="svc-acc-meta"><div class="svc-acc-price"><span class="was">$45.00</span>$40.50</div><div class="svc-acc-dur">30 min</div></div>
-                <a class="svc-acc-book js-book" href="book.html">Book</a>
-              </div>
-              <div class="svc-acc-row">
-                <a class="svc-acc-link" href="services/teen-haircut.html"><div class="svc-acc-name">Teen Haircut (Age 13–17) <span class="badge-sale">Save 10%</span></div><div class="svc-acc-desc">Do not book this service before 10 AM. Please be sure to shampoo your hair.</div></a>
-                <div class="svc-acc-meta"><div class="svc-acc-price"><span class="was">$40.00</span>$36.00</div><div class="svc-acc-dur">30 min</div></div>
-                <a class="svc-acc-book js-book" href="book.html">Book</a>
-              </div>
-              <div class="svc-acc-row">
-                <a class="svc-acc-link" href="services/haircut-and-facial.html"><div class="svc-acc-name">Haircut and Facial</div><div class="svc-acc-desc">Make sure your head is shampooed and product free before the appointment.</div></a>
-                <div class="svc-acc-meta"><div class="svc-acc-price">$80.00</div><div class="svc-acc-dur">30 min</div></div>
-                <a class="svc-acc-book js-book" href="book.html">Book</a>
-              </div>
-              <div class="svc-acc-row">
-                <a class="svc-acc-link" href="services/senior-cut.html"><div class="svc-acc-name">Senior Citizen Cut (65+ years old) <span class="badge-sale">Save 10%</span></div><div class="svc-acc-desc">Discounted cut for seniors 65 and older.</div></a>
-                <div class="svc-acc-meta"><div class="svc-acc-price"><span class="was">$40.00</span>$36.00</div><div class="svc-acc-dur">30 min</div></div>
-                <a class="svc-acc-book js-book" href="book.html">Book</a>
-              </div>
-            </div>
-          </details>
-
-          <!-- HOUSE CALLS -->
-          <details class="svc-acc">
-            <summary><span class="acc-chevron"></span><span class="acc-title">House Calls</span><span class="acc-count">1 service</span></summary>
-            <div class="svc-acc-body">
-              <div class="svc-acc-row">
-                <a class="svc-acc-link" href="services/house-call.html"><div class="svc-acc-name">House Call</div><div class="svc-acc-desc">Please call or text for house call appointments! $100 deposit required prior to the appointment.</div></a>
-                <div class="svc-acc-meta"><div class="svc-acc-price">$200.00+</div><div class="svc-acc-dur">1 hr 30 min</div></div>
-                <a class="svc-acc-book js-book" href="book.html">Book</a>
-              </div>
-            </div>
-          </details>
-
-          <!-- SHAPE UPS -->
-          <details class="svc-acc">
-            <summary><span class="acc-chevron"></span><span class="acc-title">Shape Ups <span class="acc-note">(this category applies to all ages)</span></span><span class="acc-count">1 service</span></summary>
-            <div class="svc-acc-body">
-              <div class="svc-acc-row">
-                <a class="svc-acc-link" href="services/eyebrows.html"><div class="svc-acc-name">Eyebrows</div><div class="svc-acc-desc">Precision eyebrow shape up to frame the face. Suitable for all ages.</div></a>
-                <div class="svc-acc-meta"><div class="svc-acc-price">$10.00</div><div class="svc-acc-dur">10 min</div></div>
-                <a class="svc-acc-book js-book" href="book.html">Book</a>
-              </div>
-            </div>
-          </details>
-
-          <!-- ADD ONS -->
-          <details class="svc-acc">
-            <summary><span class="acc-chevron"></span><span class="acc-title">Add Ons</span><span class="acc-count">4 services</span></summary>
-            <div class="svc-acc-body">
-              <div class="svc-acc-row">
-                <a class="svc-acc-link" href="services/color-services.html"><div class="svc-acc-name">Color Services</div><div class="svc-acc-desc">Professional hair or beard color, gray blending, and tone enhancement.</div></a>
-                <div class="svc-acc-meta"><div class="svc-acc-price">$45.00</div><div class="svc-acc-dur">1 hr</div></div>
-                <a class="svc-acc-book js-book" href="book.html">Book</a>
-              </div>
-              <div class="svc-acc-row">
-                <a class="svc-acc-link" href="services/shampoo.html"><div class="svc-acc-name">Shampoo</div><div class="svc-acc-desc">Cleansing shampoo and rinse — great prep before a cut or a refreshing reset.</div></a>
-                <div class="svc-acc-meta"><div class="svc-acc-price">$15.00</div><div class="svc-acc-dur">30 min</div></div>
-                <a class="svc-acc-book js-book" href="book.html">Book</a>
-              </div>
-              <div class="svc-acc-row">
-                <a class="svc-acc-link" href="services/hot-towel.html"><div class="svc-acc-name">Hot Towel</div><div class="svc-acc-desc">The classic warm hot towel finish. Soothing and pore-opening.</div></a>
-                <div class="svc-acc-meta"><div class="svc-acc-price">$10.00</div><div class="svc-acc-dur">5 min</div></div>
-                <a class="svc-acc-book js-book" href="book.html">Book</a>
-              </div>
-              <div class="svc-acc-row">
-                <a class="svc-acc-link" href="services/shear-work.html"><div class="svc-acc-name">Shear Work</div><div class="svc-acc-desc">Scissor-over-comb detailing and shear cutting for a softer, textured finish.</div></a>
-                <div class="svc-acc-meta"><div class="svc-acc-price">$10.00+</div><div class="svc-acc-dur">30 min</div></div>
-                <a class="svc-acc-book js-book" href="book.html">Book</a>
-              </div>
-            </div>
-          </details>
-
-          <!-- SPA SERVICES -->
-          <details class="svc-acc">
-            <summary><span class="acc-chevron"></span><span class="acc-title">SPA Services</span><span class="acc-count">1 service</span></summary>
-            <div class="svc-acc-body">
-              <div class="svc-acc-row">
-                <a class="svc-acc-link" href="services/facial.html"><div class="svc-acc-name">Facial</div><div class="svc-acc-desc">Professional facial treatment for clean, refreshed, healthy-looking skin.</div></a>
-                <div class="svc-acc-meta"><div class="svc-acc-price">$40.00</div><div class="svc-acc-dur">30 min</div></div>
-                <a class="svc-acc-book js-book" href="book.html">Book</a>
-              </div>
-            </div>
-          </details>
-
+        <div class="lbx-svc-grid reveal">
+          <a class="lbx-svc" href="services/adult-haircut.html">
+            <span class="lbx-svc-ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="7" width="8" height="13" rx="2"/><path d="M9 7V4.5M12 7V3.5M15 7V4.5M10.5 12h3M12 20v1.5"/></svg>
+            </span>
+            <h3>Haircuts</h3>
+            <p>Clean. Sharp. Detailed.</p>
+          </a>
+          <a class="lbx-svc" href="services/children-haircut.html">
+            <span class="lbx-svc-ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="6"/><path d="M6.5 11c1.5-4.5 9.5-4.5 11 0M9.5 13.5v.5M14.5 13.5v.5M10 16.5c1.2.8 2.8.8 4 0"/></svg>
+            </span>
+            <h3>Kids &amp; Teen Cuts</h3>
+            <p>Fresh styles for the next generation.</p>
+          </a>
+          <a class="lbx-svc" href="services/beard-lineup.html">
+            <span class="lbx-svc-ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 6c0 6 1 12 5 12s5-6 5-12"/><path d="M7 6c1.5 1.5 3 2 5 2s3.5-.5 5-2"/><path d="M9.5 13.5v2M12 14.5v2.5M14.5 13.5v2"/></svg>
+            </span>
+            <h3>Beard Trims</h3>
+            <p>Shape. Line up. Enhance.</p>
+          </a>
+          <a class="lbx-svc" href="services/hot-shave.html">
+            <span class="lbx-svc-ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="5" rx="1"/><path d="M12 9v4"/><rect x="10.5" y="13" width="3" height="7" rx="1.2"/></svg>
+            </span>
+            <h3>Bald Head Shaves</h3>
+            <p>Smooth finish. Clean look.</p>
+          </a>
+          <a class="lbx-svc" href="services/hot-towel.html">
+            <span class="lbx-svc-ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="13" width="14" height="3" rx="1.4"/><rect x="5" y="17" width="14" height="3" rx="1.4"/><path d="M9 9.5c0-1.2 1-1.2 1-2.4M13 9.5c0-1.2 1-1.2 1-2.4"/></svg>
+            </span>
+            <h3>Hot Towel Shaves</h3>
+            <p>Relax. Refresh. Rejuvenate.</p>
+          </a>
+          <a class="lbx-svc" href="services/haircut-facial-steamer.html">
+            <span class="lbx-svc-ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 13h9a4 4 0 0 1 0 8H10a4 4 0 0 1-4-4v-4z"/><path d="M15 15h3a2 2 0 0 1 0 4h-1"/><path d="M9 9.5c0-1.2 1-1.2 1-2.4M12.5 9.5c0-1.2 1-1.2 1-2.4"/></svg>
+            </span>
+            <h3>Facial Steamer Services</h3>
+            <p>Deep clean. Hydrate. Revitalize.</p>
+          </a>
+          <a class="lbx-svc" href="services/early-bird-package.html">
+            <span class="lbx-svc-ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17.5 5.5 8l4 3.5L12 6l2.5 5.5 4-3.5 1.5 9.5z"/><path d="M4.5 20h15"/></svg>
+            </span>
+            <h3>Luxury Grooming Packages</h3>
+            <p>The ultimate experience.</p>
+          </a>
         </div>
 
-        <div class="center" style="margin-top:44px;display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
-          <a class="btn btn--gold btn--lg" href="services/index.html">View All Services &amp; Details</a>
-          <a class="btn btn--ghost btn--lg js-book" href="#book">Book Now</a>
-        </div>
+        <p class="center reveal" style="margin-top:34px;">
+          <a class="lbx-link-menu" href="services/index.html">View the full service menu &amp; pricing →</a>
+        </p>
       </div>
     </section>
 
-    <!-- ===================== STORY / MEET LARRY ===================== -->
-    <section class="section" id="story">
-      <div class="container">
-        <div class="meet-grid">
-          <div class="meet-portrait reveal">
-            <img data-photo="larry-portrait.jpg" data-label="Photo of Larry"
-                 src="assets/images/larry-portrait.jpg" alt="Larry, the barber, in his shop" />
-            <span class="frame-badge">15+ yrs in the chair</span>
-          </div>
-          <div class="meet-copy reveal">
-            <p class="eyebrow">Meet Larry</p>
-            <h2 class="section-title">More than a haircut. <span class="accent">More than a conversation.</span></h2>
-            <p class="lede">Larry has spent his career making people look good and feel even better. The chair is about confidence, consistency and craft — every client leaves sharper than they walked in.</p>
-            <blockquote>
-              “You never know what someone is carrying. Be kind, listen more, and check on the men around you. Your conversation could change a life.”
-              <cite>— Larry The Barber</cite>
-            </blockquote>
-          </div>
+    <!-- ===================== WHY / ABOUT ===================== -->
+    <section class="lbx-why" id="about">
+      <div class="container lbx-why-grid">
+        <div class="lbx-why-media reveal">
+          <img src="https://d2zdpiztbgorvt.cloudfront.net/region1/us/304968/biz_photo/01ae7f67a46645699bd60609f51271-larry-the-barber-biz-photo-aad2982c12694990a0d863130d0b1f-booksy.jpeg?size=640x427" alt="Inside the LarryTheBarber shop" loading="lazy" />
         </div>
-      </div>
-    </section>
+        <div class="lbx-why-copy reveal">
+          <p class="lbx-why-kicker">Why Book With</p>
+          <h2 class="lbx-h2">LarryTheBarber?</h2>
+          <p class="lbx-why-lede">Every cut is detailed, clean, and tailored to your look. Whether you need a fresh fade, sharp beard, or full grooming experience, this is more than a haircut — it's confidence in the mirror.</p>
 
-    <!-- ===================== BOOKING BAND ===================== -->
-    <section class="section book-band" id="book">
-      <div class="container">
-        <div class="reveal">
-          <p class="eyebrow">Book Online</p>
-          <h2>Reserve your chair <span class="accent">in seconds.</span></h2>
-          <p class="lede">Choose from all 30 services, pick your preferred date and time, and Larry will confirm within a few hours. 100% online — no app, no redirect.</p>
-          <ul class="info-list" style="max-width:420px;">
-            <li><span class="k">All services</span><span class="v">Every haircut, beard service, package &amp; membership in one place</span></li>
-            <li><span class="k">Direct</span><span class="v">Request goes straight to Larry — no middleman</span></li>
-            <li><span class="k">Flexible</span><span class="v">Early Bird, After Hours, Family packages &amp; more</span></li>
-          </ul>
-        </div>
-
-        <div class="book-panel reveal">
-          <h3>Ready when you are</h3>
-          <p>Pick a service and drop in your preferred time — Larry will text or call to confirm.</p>
-          <a class="btn btn--primary btn--block btn--lg js-book" href="book.html">Book an Appointment</a>
-          <p class="or">— or —</p>
-          <a class="btn btn--ghost btn--block" href="tel:+14044903052">Call / Text (404) 490-3052</a>
+          <div class="lbx-why-points">
+            <div class="lbx-point">
+              <span class="lbx-point-ic" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3.5"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg>
+              </span>
+              <span>Precision<br />&amp; Detail</span>
+            </div>
+            <div class="lbx-point">
+              <span class="lbx-point-ic" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="5.5"/><path d="M12 6.2l.9 1.8 2 .3-1.45 1.4.35 2-1.8-.95-1.8.95.35-2L9.1 8.3l2-.3z"/><path d="M8.5 13.5 7 21l5-2.6L17 21l-1.5-7.5"/></svg>
+              </span>
+              <span>Premium<br />Experience</span>
+            </div>
+            <div class="lbx-point">
+              <span class="lbx-point-ic" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3.5 2"/></svg>
+              </span>
+              <span>On Time<br />Every Time</span>
+            </div>
+            <div class="lbx-point">
+              <span class="lbx-point-ic" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5c1-4 4-6 7.5-6s6.5 2 7.5 6"/></svg>
+              </span>
+              <span>Client<br />Focused</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- ===================== GALLERY ===================== -->
-    <section class="section section--tight" id="gallery" style="background:var(--black-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+    <section class="lbx-gallery" id="gallery">
       <div class="container">
-        <div class="center reveal" style="margin-bottom:44px;">
-          <p class="eyebrow">The Work</p>
-          <h2 class="section-title">Fresh From <span class="accent">The Chair</span></h2>
-        </div>
-        <div class="gallery">
-          <figure class="reveal">
+        <p class="lbx-eyebrow reveal"><span></span>Gallery<span></span></p>
+        <h2 class="lbx-h2 center reveal">Fresh From The Chair.</h2>
+        <div class="gallery reveal">
+          <figure>
             <img src="assets/images/5192482876c1478ebee6f46fcaa324-larry-the-barber-inspiration-b1fdc826a3154b58b71e0ff63ad4f7-booksy.jpeg" alt="Client haircut by Larry The Barber" loading="lazy" />
-            <figcaption>Fresh Cut</figcaption>
           </figure>
-          <figure class="reveal">
+          <figure>
             <img src="assets/images/6baee628f94342bbb545580d941632-larry-the-barber-inspiration-ccccbf4bc7874a9fae9fda1d6a6fc9-booksy.jpeg" alt="Client haircut by Larry The Barber" loading="lazy" />
-            <figcaption>Fresh Cut</figcaption>
           </figure>
-          <figure class="reveal">
+          <figure>
             <img src="assets/images/7ed036dad8aa483797e21df6b77f15-larry-the-barber-inspiration-c71cfbfb5b1941a596c26f813a7769-booksy.jpeg" alt="Client haircut by Larry The Barber" loading="lazy" />
-            <figcaption>Fresh Cut</figcaption>
           </figure>
-          <figure class="reveal">
+          <figure>
             <img src="assets/images/ba3476b8b02046d28ea04d1b29b363-larry-the-barber-inspiration-6a041e4b7d9c4a0b8897785d40b668-booksy.jpeg" alt="Client haircut by Larry The Barber" loading="lazy" />
-            <figcaption>Fresh Cut</figcaption>
           </figure>
-          <figure class="reveal">
+          <figure>
             <img src="assets/images/e63bb35110004a848249f26b32d5c8-larry-the-barber-inspiration-b07345b1ed0c4e57b30bc47724dc57-booksy.jpeg" alt="Client haircut by Larry The Barber" loading="lazy" />
-            <figcaption>Fresh Cut</figcaption>
           </figure>
         </div>
       </div>
     </section>
 
-    <!-- ===================== CONTACT ===================== -->
-    <section class="section" id="contact">
-      <div class="container">
-        <div class="contact-grid">
-          <div class="reveal">
-            <p class="eyebrow">Visit / Reach Out</p>
-            <h2 class="section-title">Get In <span class="accent">Touch</span></h2>
-            <p class="lede">Questions about a service, a product, or your next appointment? Call or text — Larry will take care of you.</p>
-            <ul class="info-list">
-              <li><span class="k">Phone</span><span class="v"><a href="tel:+14044903052">(404) 490-3052</a></span></li>
-              <li><span class="k">Booking</span><span class="v"><a class="js-book" href="#book">Book online on Booksy</a></span></li>
-              <li><span class="k">Area</span><span class="v">Atlanta, GA &amp; surrounding</span></li>
-            </ul>
-            <div style="margin-top:28px;">
-              <a class="btn btn--primary btn--lg js-book" href="#book">Book Appointment</a>
-            </div>
-          </div>
-          <div class="reveal">
-            <p class="eyebrow">Hours</p>
-            <table class="hours-table">
-              <tr><td>Monday</td><td>9:00 AM – 7:00 PM</td></tr>
-              <tr><td>Tuesday</td><td>9:00 AM – 7:00 PM</td></tr>
-              <tr><td>Wednesday</td><td>9:00 AM – 7:00 PM</td></tr>
-              <tr><td>Thursday</td><td>9:00 AM – 7:00 PM</td></tr>
-              <tr><td>Friday</td><td>9:00 AM – 8:00 PM</td></tr>
-              <tr><td>Saturday</td><td>8:00 AM – 6:00 PM</td></tr>
-              <tr><td>Sunday</td><td>By appointment</td></tr>
-            </table>
-            <p class="lede" style="margin-top:18px;font-size:0.92rem;">Hours are a placeholder — send me Larry's real hours and address and I'll drop them in.</p>
-          </div>
+    <!-- ===================== CTA BAND ===================== -->
+    <section class="lbx-cta">
+      <div class="container lbx-cta-inner">
+        <h2 class="lbx-cta-title">
+          <span class="w">Ready for your next</span>
+          <span class="b">Transformation?</span>
+        </h2>
+        <div class="lbx-cta-actions">
+          <a class="lbx-cta-book" href="https://larry-thebarber.booksy.com" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/></svg>
+            Book Now on Booksy
+          </a>
+          <a class="lbx-pill" href="https://larry-thebarber.booksy.com" target="_blank" rel="noopener">Larry-thebarber.booksy.com</a>
         </div>
       </div>
     </section>
+
   </main>
 
-  <!-- ===================== FOOTER ===================== -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <div class="brand">
-            <span class="brand-main">Larry The Barber</span>
-            <span class="brand-sub">Grooming Co.</span>
-          </div>
-          <p>Premium cuts, fades and grooming for the modern gentleman. Book online anytime or call <a href="tel:+14044903052" style="color:var(--gold);">(404) 490-3052</a>.</p>
-        </div>
+  <!-- ===================== FOOTER / CONTACT ===================== -->
+  <footer class="lbx-footer" id="contact">
+    <div class="container lbx-footer-grid">
+      <a href="#top" class="lbx-logo lbx-logo--footer" aria-label="Larry The Barber home">
+        <span class="lbx-logo-lb">LB</span>
+        <span class="lbx-logo-name">Larry The Barber</span>
+        <span class="lbx-logo-sub">Grooming&nbsp;Co.</span>
+      </a>
+
+      <div class="lbx-foot-block">
+        <span class="lbx-foot-ic" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11z"/><circle cx="12" cy="10" r="2.6"/></svg>
+        </span>
         <div>
-          <h4>Explore</h4>
-          <a href="#services">Services</a>
-          <a href="#story">Story</a>
-          <a href="#gallery">Gallery</a>
-          <a class="js-book" href="#book">Book Online</a>
-        </div>
-        <div>
-          <h4>Legal</h4>
-          <a href="legal/privacy-policy.html">Privacy Policy</a>
-          <a href="legal/terms-of-service.html">Terms of Service</a>
-          <a href="legal/cookie-policy.html">Cookie Policy</a>
-          <a href="legal/accessibility-statement.html">Accessibility</a>
+          <strong>Downtown Alpharetta</strong>
+          Inside Salons By JC<br />
+          33 S Main St. Suite 201<br />
+          Alpharetta, GA 30009
         </div>
       </div>
-      <div class="footer-bottom">
-        <span>© <span class="js-year">2026</span> Larry The Barber — Grooming Co. All rights reserved.</span>
-        <span>Atlanta, GA · (404) 490-3052</span>
+
+      <div class="lbx-foot-block">
+        <span class="lbx-foot-ic" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1l-2.2 2.2z"/></svg>
+        </span>
+        <div>
+          <a href="tel:+14044903052"><strong>404-490-3052</strong></a>
+          <a href="https://www.instagram.com/LarryTheBarber_" target="_blank" rel="noopener" class="lbx-ig">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg>
+            @LarryTheBarber_
+          </a>
+        </div>
       </div>
+
+      <div class="lbx-tagline">
+        <span class="script">It's More Than A Cut,</span>
+        <span class="bold">It's An Experience.</span>
+      </div>
+    </div>
+
+    <div class="container lbx-footer-bottom">
+      <span>© <span class="js-year">2026</span> Larry The Barber — Grooming Co. All rights reserved.</span>
+      <nav aria-label="Legal">
+        <a href="legal/privacy-policy.html">Privacy</a>
+        <a href="legal/terms-of-service.html">Terms</a>
+        <a href="legal/cookie-policy.html">Cookies</a>
+        <a href="legal/accessibility-statement.html">Accessibility</a>
+      </nav>
     </div>
   </footer>
 
