@@ -5,21 +5,15 @@
 (function () {
   "use strict";
 
-  /* ---- Wire every booking button to the on-site booking page ---- */
+  /* ---- Wire every booking button straight to Booksy ---- */
+  var BOOKSY_URL = "https://larry-thebarber.booksy.com";
   function initBooking() {
     var buttons = document.querySelectorAll(".js-book");
-    var isOnBookPage = window.location.pathname.indexOf("book.html") !== -1;
     for (var i = 0; i < buttons.length; i++) {
       var el = buttons[i];
-      if (isOnBookPage) {
-        el.setAttribute("href", "#booking-form");
-      } else {
-        var depth = window.location.pathname.split("/").length - 2;
-        var prefix = depth > 0 ? "../" : "";
-        el.setAttribute("href", prefix + "book.html");
-      }
-      el.removeAttribute("target");
-      el.removeAttribute("rel");
+      el.setAttribute("href", BOOKSY_URL);
+      el.setAttribute("target", "_blank");
+      el.setAttribute("rel", "noopener");
     }
   }
 
