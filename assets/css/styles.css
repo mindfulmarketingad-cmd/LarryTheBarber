@@ -591,9 +591,8 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; line-height
     var(--black);
   border-bottom: 1px solid var(--line);
 }
-.lbx-hero-grid { display: block; padding-top: 88px; padding-bottom: 88px; }
-.lbx-hero-copy { max-width: 640px; margin: 0 auto; text-align: center; }
-.lbx-hero-copy .lbx-bookcard { margin: 0 auto; }
+.lbx-hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 40px; align-items: center; padding-top: 76px; padding-bottom: 76px; }
+.lbx-hero-copy { max-width: 560px; }
 .lbx-hero-eyebrow {
   color: var(--blue-bright); font-weight: 600; font-size: 0.72rem;
   letter-spacing: 0.32em; text-transform: uppercase; margin: 0 0 16px;
@@ -626,6 +625,24 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; line-height
   font-weight: 600; font-size: 0.85rem; letter-spacing: 0.02em;
   padding: 10px 22px; border-radius: 999px;
   transition: background 0.2s, transform 0.2s;
+}
+
+.lbx-hero-media {
+  position: relative; height: 100%; min-height: 480px;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 22%, #000 78%, transparent 100%),
+                       linear-gradient(to bottom, transparent 0%, #000 14%, #000 86%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-image: linear-gradient(to right, transparent 0%, #000 22%, #000 78%, transparent 100%),
+              linear-gradient(to bottom, transparent 0%, #000 14%, #000 86%, transparent 100%);
+  mask-composite: intersect;
+}
+.lbx-hero-media img {
+  width: 100%; height: 100%; object-fit: cover; object-position: 50% 20%;
+  filter: saturate(0.94) contrast(1.03) brightness(0.96);
+}
+.lbx-hero-media::before {
+  content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background: radial-gradient(120% 100% at 50% 45%, transparent 42%, var(--black) 97%);
 }
 .lbx-pill:hover { background: var(--blue-bright); transform: translateY(-1px); }
 
@@ -812,7 +829,8 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; line-height
   .lbx-nav-right-group { order: 2; flex: 0 0 auto; }
   .lbx-book-now { order: 0; }
 
-  .lbx-hero-grid { padding-top: 44px; padding-bottom: 44px; }
+  .lbx-hero-grid { grid-template-columns: 1fr; padding-top: 44px; padding-bottom: 44px; }
+  .lbx-hero-media { order: -1; min-height: 320px; }
   .lbx-why-grid { grid-template-columns: 1fr; gap: 34px; }
   .lbx-why-photos { min-height: 340px; }
   .lbx-cta-inner { flex-direction: column; text-align: center; }
