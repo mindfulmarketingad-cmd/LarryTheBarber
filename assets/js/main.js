@@ -45,15 +45,20 @@
   /* ---- Mobile nav toggle ---- */
   function initNav() {
     var toggle = document.querySelector(".nav-toggle");
-    var links = document.querySelector(".nav-links");
-    if (!toggle || !links) return;
+    var groups = document.querySelectorAll(".nav-links");
+    if (!toggle || !groups.length) return;
     toggle.addEventListener("click", function () {
-      links.classList.toggle("is-open");
-      toggle.setAttribute("aria-expanded", links.classList.contains("is-open"));
+      var isOpen = groups[0].classList.contains("is-open");
+      for (var i = 0; i < groups.length; i++) groups[i].classList.toggle("is-open", !isOpen);
+      toggle.setAttribute("aria-expanded", String(!isOpen));
     });
-    var anchors = links.querySelectorAll("a");
-    for (var i = 0; i < anchors.length; i++) {
-      anchors[i].addEventListener("click", function () { links.classList.remove("is-open"); });
+    for (var i = 0; i < groups.length; i++) {
+      var anchors = groups[i].querySelectorAll("a");
+      for (var j = 0; j < anchors.length; j++) {
+        anchors[j].addEventListener("click", function () {
+          for (var k = 0; k < groups.length; k++) groups[k].classList.remove("is-open");
+        });
+      }
     }
   }
 
