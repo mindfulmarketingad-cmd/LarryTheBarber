@@ -77,6 +77,61 @@
     for (var j = 0; j < els.length; j++) obs.observe(els[j]);
   }
 
+  /* ---- Gallery carousel ---- */
+  function initCarousel() {
+    var track = document.querySelector(".lbx-carousel-track");
+    var dotsWrap = document.querySelector(".lbx-carousel-dots");
+    if (!track || !dotsWrap) return;
+    var slides = track.querySelectorAll(".lbx-carousel-slide");
+    var prevBtn = document.querySelector(".lbx-carousel-prev");
+    var nextBtn = document.querySelector(".lbx-carousel-next");
+
+    var dots = [];
+    for (var i = 0; i < slides.length; i++) {
+      (function (index) {
+        var dot = document.createElement("button");
+        dot.setAttribute("aria-label", "Go to photo " + (index + 1));
+        dot.addEventListener("click", function () {
+          slides[index].scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+        });
+        dotsWrap.appendChild(dot);
+        dots.push(dot);
+      })(i);
+    }
+
+    function setActive(index) {
+      for (var i = 0; i < dots.length; i++) dots[i].classList.toggle("is-active", i === index);
+    }
+
+    function nearestIndex() {
+      var trackCenter = track.scrollLeft + track.clientWidth / 2;
+      var best = 0, bestDist = Infinity;
+      for (var i = 0; i < slides.length; i++) {
+        var center = slides[i].offsetLeft + slides[i].clientWidth / 2;
+        var dist = Math.abs(center - trackCenter);
+        if (dist < bestDist) { bestDist = dist; best = i; }
+      }
+      return best;
+    }
+
+    var scrollTimer;
+    track.addEventListener("scroll", function () {
+      clearTimeout(scrollTimer);
+      scrollTimer = setTimeout(function () { setActive(nearestIndex()); }, 100);
+    });
+
+    if (prevBtn) prevBtn.addEventListener("click", function () {
+      var idx = Math.max(0, nearestIndex() - 1);
+      slides[idx].scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+    });
+    if (nextBtn) nextBtn.addEventListener("click", function () {
+      var idx = Math.min(slides.length - 1, nearestIndex() + 1);
+      slides[idx].scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+    });
+
+    setActive(0);
+  }
+
   /* ---- Footer year ---- */
   function initYear() {
     var y = document.querySelector(".js-year");
@@ -145,6 +200,7 @@
     initBooking();
     initImages();
     initNav();
+    initCarousel();
     initReveal();
     initYear();
     initBookingForm();
