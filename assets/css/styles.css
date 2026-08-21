@@ -831,18 +831,18 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; line-height
   .lbx-svc-grid { grid-template-columns: repeat(4, 1fr); }
   .lbx-footer-grid { grid-template-columns: 1fr 1fr; }
 }
+.lbx-mobile-nav { display: none; }
 @media (max-width: 880px) {
   .lbx-nav { flex-wrap: wrap; justify-content: center; row-gap: 12px; position: relative; }
   .lbx-logo { order: -1; width: 100%; }
-  .lbx-nav-side { flex: 0 1 auto; gap: 18px; }
+  .lbx-nav-left, .lbx-nav-right-group .lbx-nav-right { display: none; }
   .lbx-nav-right-group { flex: 0 1 auto; }
-  .nav-links { display: none; }
-  .nav-links.is-open {
+  .lbx-mobile-nav.nav-links { display: none; }
+  .lbx-mobile-nav.nav-links.is-open {
     display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0;
     background: var(--black-2); border-bottom: 1px solid var(--line); padding: 14px 24px; gap: 4px; z-index: 5;
   }
-  .lbx-nav-right-group .nav-links.is-open { top: 100%; }
-  .nav-links.is-open a { padding: 10px 0; }
+  .lbx-mobile-nav.nav-links.is-open a { padding: 10px 0; }
   .nav-toggle { display: block; order: 1; }
   .lbx-nav-right-group { order: 2; flex: 0 0 auto; }
   .lbx-book-now { order: 0; }
