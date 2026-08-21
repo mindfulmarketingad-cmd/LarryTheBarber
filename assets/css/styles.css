@@ -659,7 +659,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; line-height
 
 /* ---------- Services tiles ---------- */
 .lbx-services { padding: 78px 0; background: var(--black-2); border-bottom: 1px solid var(--line); }
-.lbx-svc-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 14px; margin-top: 44px; }
+.lbx-svc-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 44px; }
 .lbx-svc {
   background: #0d0e11; border: 1px solid var(--line); border-radius: 10px;
   padding: 26px 14px 16px; text-align: center;
@@ -707,8 +707,17 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; line-height
 .lbx-why-photo--tall { grid-row: 1 / 3; }
 
 /* ---------- Gallery carousel ---------- */
-.lbx-carousel-section { padding: 86px 0 90px; background: var(--black-2); border-bottom: 1px solid var(--line); }
-.lbx-carousel-section .container { margin-bottom: 44px; }
+.lbx-gallery-section { padding: 86px 0 90px; background: var(--black-2); border-bottom: 1px solid var(--line); }
+.lbx-gallery-section .container { margin-bottom: 34px; }
+.lbx-gallery-tabs { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin-top: 30px; }
+.lbx-gallery-tab {
+  padding: 9px 20px; border-radius: 20px; border: 1px solid var(--line-strong);
+  background: none; color: var(--muted); font-family: var(--font-body); font-size: 0.8rem;
+  font-weight: 500; letter-spacing: 0.04em; cursor: pointer; transition: all 0.2s;
+}
+.lbx-gallery-tab:hover { border-color: var(--blue); color: #fff; }
+.lbx-gallery-tab.is-active { background: var(--blue); border-color: var(--blue); color: #fff; }
+.lbx-carousel-block[hidden] { display: none; }
 .lbx-carousel { position: relative; display: flex; align-items: center; gap: 12px; max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
 .lbx-carousel-track {
   display: flex; gap: 18px; overflow-x: auto; scroll-snap-type: x mandatory;

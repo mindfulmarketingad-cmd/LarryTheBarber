@@ -77,14 +77,15 @@
     for (var j = 0; j < els.length; j++) obs.observe(els[j]);
   }
 
-  /* ---- Gallery carousel ---- */
-  function initCarousel() {
-    var track = document.querySelector(".lbx-carousel-track");
-    var dotsWrap = document.querySelector(".lbx-carousel-dots");
-    if (!track || !dotsWrap) return;
+  /* ---- Gallery carousel(s) ---- */
+  function initOneCarousel(root) {
+    var track = root.querySelector(".lbx-carousel-track");
+    var dotsWrap = root.querySelector(".lbx-carousel-dots");
+    if (!track || !dotsWrap || dotsWrap.dataset.wired) return;
+    dotsWrap.dataset.wired = "1";
     var slides = track.querySelectorAll(".lbx-carousel-slide");
-    var prevBtn = document.querySelector(".lbx-carousel-prev");
-    var nextBtn = document.querySelector(".lbx-carousel-next");
+    var prevBtn = root.querySelector(".lbx-carousel-prev");
+    var nextBtn = root.querySelector(".lbx-carousel-next");
 
     var dots = [];
     for (var i = 0; i < slides.length; i++) {
@@ -130,6 +131,29 @@
     });
 
     setActive(0);
+  }
+
+  function initCarousel() {
+    var roots = document.querySelectorAll(".lbx-carousel-block, .lbx-carousel-section .lbx-carousel");
+    for (var i = 0; i < roots.length; i++) initOneCarousel(roots[i]);
+  }
+
+  /* ---- Gallery tabs (Full / Adult / Kids) ---- */
+  function initGalleryTabs() {
+    var tabs = document.querySelectorAll(".lbx-gallery-tab");
+    if (!tabs.length) return;
+    tabs.forEach(function (tab) {
+      tab.addEventListener("click", function () {
+        tabs.forEach(function (t) { t.classList.remove("is-active"); });
+        tab.classList.add("is-active");
+        var target = tab.getAttribute("data-target");
+        document.querySelectorAll(".lbx-carousel-block").forEach(function (block) {
+          var show = block.id === target;
+          block.hidden = !show;
+          if (show) initOneCarousel(block);
+        });
+      });
+    });
   }
 
   /* ---- Footer year ---- */
@@ -200,6 +224,7 @@
     initBooking();
     initImages();
     initNav();
+    initGalleryTabs();
     initCarousel();
     initReveal();
     initYear();
