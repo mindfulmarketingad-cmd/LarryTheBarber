@@ -357,6 +357,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; line-height
 }
 .svc-price-card .was { font-size: 0.9rem; color: var(--muted); text-decoration: line-through; }
 .svc-price-card .price { font-family: var(--font-display); font-size: 3rem; color: var(--gold); line-height: 1; margin: 6px 0; }
+.svc-price-note { font-family: var(--font-body); font-weight: 600; font-size: 1.05rem; color: var(--gold); margin: 4px 0 10px; }
 .svc-price-card .dur { font-size: 0.82rem; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 22px; }
 .svc-body { padding: 72px 0; }
 .svc-body-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 60px; align-items: start; }
